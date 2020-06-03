@@ -2,17 +2,70 @@
 <html>
   <head>
     <meta charset="UTF-8">
-    <title>My Portfolio</title>
+    <title>Carlota Guruceaga Portfolio</title>
     <link rel="stylesheet" href="style.css">
     <script src="script.js"></script>
   </head>
-  <body>
-    <div id="content">
-      <h1>My Portfolio</h1>
-      <p>This is my portfolio.</p>
+  
+  <body data-spy ="scroll" data-target="#myScrollspy" data-offset="15">
+      <div class="container-fluid" id="top">
+          <h1> Carlota Guruceaga </h1>
+          <h2> Portfolio </h2>
+      </div>
+      <br>
+      
+      <!-- creating a vertical scroll bar -->
+      <div class="container">
+          <div class="row">
+              <nav class="col-sm-3" id="myScrollspy">
+                   <ul class="nav nav-pills nav-stacked" data-spy="affix" data-offset-top="205">
+                       <li><a href="#education">Education</a></li>
+                       <li><a href="#work">Work</a></li>
+                       <li><a href="#projects">Projects</a></li>
+                       <li><a href="#service">Community Service</a></li>
+                       <li><a href="#interets">Interets</a></li>
+                       <li><a href="#family">Family</a></li>
+                       <li><a href="#contact">Contact Info</a></li>
+                    </ul>
+                </nav>
+                <div class="col-sm-9">
+                    <div id="education">
+                        <h2>Education</h2>
+                        <p>Georgia Tech</p>
+                    </div>
+                    <div id="work" >
+                        <h2>Work Experince</h2>
+                    </div>
+                    <div id="projects">
+                        <h2>Projects</h2>
+                    </div>
+                    <div id="service">
+                        <h2>Community Service</h2>
+                    </div>
+                    <div id="interets">
+                        <h2>Interets</h2>
+                    </div>
+                    <div id="family">
+                        <h2>Family</h2>
+                    </div>
+                    <div id="contact">
+                        <h2>Contact Me!</h2>
+                        <p> my linkin profile is: </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+    
+    
+      
+
+    <!--<div id="content">
+      <img src="/images/headshot.jpg"/>
       <p>Click here to get a random message:</p>
       <button onclick="addRandomGreeting()">Hello</button>
       <div id="greeting-container"></div>
-    </div>
+    </div>-->
+
   </body>
 </html>

@@ -1,9 +1,70 @@
-#content {
-  margin-left: auto;
-  margin-right: auto;
-  width: 650px;
+@font-face {
+    font-family: "Barlow";
+    src: url(Barlow-Black.ttf);
+}
+@font-face {
+    font-family: "BarlowR";
+    src: url(Barlow-Regular.ttf);
+}
+body {
+    position: relative;
 }
 
-#greeting-container {
-  margin-top: 20px;
+h1 {
+  color: black;
+  text-align: center;
+  font-family: Barlow;
 }
+
+p {
+    color: black;
+    font-family: BarlowR;
+}
+td {
+    color:black;
+    font-family: BarlowR;
+}
+th {
+    color:black;
+    font-family: BarlowR;
+}
+h2 {
+    color:black;
+    font-family: Barlow;
+}
+
+ul {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    overflow: hidden;
+    background-color: rgb(182, 181, 181);
+	font-size: 1.5rem;
+	background: font-size-adjust;
+    font-family: Barlow;
+}
+.navbar {
+    position: fixed;
+    top: 0;
+    width: 100%;
+    overflow: hidden;
+}
+.top {
+    padding-top: 40px;
+}
+
+li{
+    padding-right: 25px;
+    padding-left: 25px;
+    font-family: Barlow;
+}
+
+
+
+#education {padding-top:50px;height:500px;color: #fff; background-color: rgba(224, 224, 82, 0.137);}
+#work {padding-top:50px;height:500px;color: #fff; background-color: rgba(117, 187, 148, 0.267);}
+#projects {padding-top:50px;height:500px;color: #fff; background-color: #e4b67242;}
+#service {padding-top:50px;height:500px;color: #fff; background-color: rgba(243, 188, 197, 0.185);}
+#interets {padding-top:50px;height:500px;color: #fff; background-color: rgba(171, 117, 221, 0.226);}
+#family {padding-top:50px;height:500px;color: #fff; background-color: rgba(238, 238, 209, 0.329);}
+#contact {padding-top:50px;height:500px;color: #fff; background-color: rgba(186, 230, 150, 0.274);}

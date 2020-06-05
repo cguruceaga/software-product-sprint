@@ -2,66 +2,199 @@
 <html>
   <head>
     <meta charset="UTF-8">
-    <title>Carlota Guruceaga Portfolio</title>
+    <title>Carlota Guruceaga's Portfolio</title>
     <link rel="stylesheet" href="style.css">
     <script src="script.js"></script>
   </head>
   
-  <body data-spy ="scroll" data-target="#myScrollspy" data-offset="15">
-      <div class="container-fluid" id="top">
-          <h1> Carlota Guruceaga </h1>
-          <h2> Portfolio </h2>
-      </div>
-      <br>
-      
-      <!-- creating a vertical scroll bar -->
-      <div class="container">
-          <div class="row">
-              <nav class="col-sm-3" id="myScrollspy">
-                   <ul class="nav nav-pills nav-stacked" data-spy="affix" data-offset-top="205">
-                       <li><a href="#education">Education</a></li>
-                       <li><a href="#work">Work</a></li>
-                       <li><a href="#projects">Projects</a></li>
-                       <li><a href="#service">Community Service</a></li>
-                       <li><a href="#interets">Interets</a></li>
-                       <li><a href="#family">Family</a></li>
-                       <li><a href="#contact">Contact Info</a></li>
-                    </ul>
-                </nav>
-                <div class="col-sm-9">
-                    <div id="education">
-                        <h2>Education</h2>
-                        <p>Georgia Tech</p>
-                    </div>
-                    <div id="work" >
-                        <h2>Work Experince</h2>
-                    </div>
-                    <div id="projects">
-                        <h2>Projects</h2>
-                    </div>
-                    <div id="service">
-                        <h2>Community Service</h2>
-                    </div>
-                    <div id="interets">
-                        <h2>Interets</h2>
-                    </div>
-                    <div id="family">
-                        <h2>Family</h2>
-                    </div>
-                    <div id="contact">
-                        <h2>Contact Me!</h2>
-                        <p> my linkin profile is: </p>
-                    </div>
-                </div>
-            </div>
+  <body>
+      <!--need to fix navbar for when resize window-->
+      <nav class="navbar">
+        <div>
+            <ul>
+                <table>
+                    <tr>
+                        <td> <li><a href="#education">Education</a></li> </td>
+                        <td> <li><a href="#work">Work</a></li></td>
+                        <td><li><a href="#projects">Projects</a></li></td>
+                        <td><li><a href="#service">Community Service</a></li></td>
+                        <td><li><a href="#interets">Interets</a></li></td>
+                        <td><li><a href="#family">Family</a></li></td>
+                        <td><li><a href="#contact">Contact Info</a></li></td>
+                    </tr>
+                </table>
+            </ul>
         </div>
+    </nav> 
+
+    <div class="top">
+        <h1> Carlota Guruceaga's Portfolio </h1>
+        <center><img src="/images/carlota.jpg" width="70%"/></center>
+    </div>
+    <div id="education" class="container-fluid">
+        <h2>Education</h2>
+        <table style="width:100%">
+            <tr>
+                <th>Georgia Instutite of Technology</th>
+                <td>Atlanta, Georgia</td>
+            </tr>
+            <tr>
+                <td>Pursuing a Bachelor in Computer Science</td>
+                <td>Expected Graduation data May 2022</td>
+            </tr>
+        </table>
+        <p>Concentrations: Artificial Intelligence and Info Internetworks  </p>
+        <p> Minor: Computing and Business through the Denning Technology and Management Program </p>
+        <p> Honors Program Student </p>
+                        
+    </div>
+        <div id="work" class="container-fluid">
+            <h2>Work Experience</h2>
+            <table style="width:100%">
+                <tr>
+                    <th>Microsft</th>
+                    <td>Seattle, Washignton</td>
+                </tr>
+                <tr>
+                    <td>Explore Intern / Azure Storage Deployment Team</td>
+                    <td>May- August 2019</td>
+                </tr>
+                <tr>
+                    <td>
+                        <p> •	Developed a dashboard using Angular to enable developers to tracks their changes more interactively </p>
+                        <p> •	Worked on creating a multiple component UI for dashboard with clear charts and a timeline </p>
+                        <p> •	Used Kusto query language to sort large databases to transfer information to backend of dashboard </p>
+                    </td>
+                </tr>
+                <tr>
+                    <th>Key Biscayne Community Center </th>
+                    <td>Key Biscayne, Florida</td>
+                </tr>
+                <tr>
+                    <td>Assistant Coding and Robotics Teacher</td>
+                    <td>July 2014 – May 2018</td>
+                </tr>
+                <tr>
+                    <td>
+                        <p> •	Taught middle school children the fundamentals of coding and robotics, leveraging their different aptitudes </P>
+                        <p> •	Used Lego Mindstorms robots and yearly competition mats </p>
+                    </td>
+                </tr>
+            </table>
+        </div>
+        <div id="projects" class="container-fluid">
+            <h2>Projects</h2>
+            <table style="width:100%">
+                <tr>
+                    <th>Carnegie Mellon Game Academy</th>
+                    <td>Pittsburgh, Pennsylvania</td>
+                </tr>
+                <tr>
+                    <td>Digital Artist /DOOR</td>
+                    <td>June-August 2017</td>
+                </tr>
+                <tr>
+                    <td>
+                        •	Conceptualized the characters and environment of the game using Maya Autodesk and Photoshop 
+                        •	Implemented augmented reality to enhance the game by 3D mapping and having physical space awareness using the Google Tango platform 
+                    </td>
+                </tr>
+                <tr>
+                    <th>Girls who Code</th>
+                    <td>June-August 2016</td>
+                </tr>
+                <tr>
+                    <td>TEEN FAQ</td>
+                    <td></td>
+                </tr>
+                <tr>
+                    <td>
+                        •	Created a website using HTML to help the transition into teenage years 
+                        •	Advised teenagers on topics ranging from schoolwork to health to fashion
+                        Checkout my website below!
+                    </td>
+                </tr>
+                <!-- need to add picture with link to website-->
+                <tr>
+                    <th>Music for All</th>
+                    <td>Miami, Florida</td>
+                </tr>
+                <tr>
+                    <td>Personal website project for my organization</td>
+                    <td>2016</td>
+                </tr>
+                <tr>
+                    <td>Checkout my website!</td>
+                </tr>
+                <!-- need to add picture with link to website-->
+            </table>
+        </div>
+        <div id="service" class="container-fluid">
+            <h2>Community Service</h2>
+            <table style="width:100%">
+                <tr>
+                    <td>Georgia Institute of Technology</td>
+                </tr>
+            </table>
+        </div>
+        <div id="interets">
+            <h2>Interets</h2>
+            <table style="width:100%">
+                <tr>
+                    <td>In my Free Time:</td>
+                </tr>
+                <tr> 
+                    <td>I love to spend my time Dancing</td>
+                    <td><!--picture of me dancing--></td>
+                </tr>
+                <tr>
+                    <td>I love to experiment in the kitchen. I especially love baking.
+                        here are some of my favorite dishes that I've made: </td>
+                </tr>
+                <tr>
+                    <td><!--pictures--></td>
+                </tr>
+                <tr>
+                    <td>I also like reading. Some of my favorite books are: </td>
+                </tr>
+                <tr>
+                    <td><!--pictures--></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                </tr>
+
+            </table>
+        </div>
+        <div id="family" class="container-fluid">
+            <h2>Family & Friends</h2>
+            <p> Family is everything to me! Here are some pictures or my family and friends. </p>
+            <table style="width:100%">
+                <tr>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                </tr>
+                <tr>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                </tr>
+            </table>
+        </div>
+        <div id="contact" class="container-fluid">
+            <h2>Contact Me!</h2>
+            <p> my linkin profile is: </p>
+            <img src="/images/headshot.jpg" style="width:300px;height:300px;"/>
+        </div>
+    </div>
+</div>
 
     
     
       
 
     <!--<div id="content">
-      <img src="/images/headshot.jpg"/>
       <p>Click here to get a random message:</p>
       <button onclick="addRandomGreeting()">Hello</button>
       <div id="greeting-container"></div>

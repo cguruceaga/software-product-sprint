@@ -58,13 +58,16 @@ li{
     padding-left: 25px;
     font-family: Barlow;
 }
+.bottom{
+    padding-left: 100px
+}
 
 
 
 #education {padding-top:50px;height:500px;color: #fff; background-color: rgba(224, 224, 82, 0.137);}
 #work {padding-top:50px;height:500px;color: #fff; background-color: rgba(117, 187, 148, 0.267);}
-#projects {padding-top:50px;height:500px;color: #fff; background-color: #e4b67242;}
+#projects {padding-top:50px;padding-bottom:1500px; height:500px;color: #fff; background-color: #e4b67242;}
 #service {padding-top:50px;height:500px;color: #fff; background-color: rgba(243, 188, 197, 0.185);}
 #interets {padding-top:50px;height:500px;color: #fff; background-color: rgba(171, 117, 221, 0.226);}
-#family {padding-top:50px;height:500px;color: #fff; background-color: rgba(238, 238, 209, 0.329);}
+#family {padding-top:50px;padding-bottom:400px;height:500px;color: #fff; background-color: rgba(238, 238, 209, 0.329);}
 #contact {padding-top:50px;height:500px;color: #fff; background-color: rgba(186, 230, 150, 0.274);}

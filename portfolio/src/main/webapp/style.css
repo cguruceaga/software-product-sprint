@@ -6,8 +6,25 @@
     font-family: "BarlowR";
     src: url(Barlow-Regular.ttf);
 }
+@font-face {
+    font-family: "BarlowL";
+    src: url(Barlow-LightItalic.ttf);
+}
+@font-face {
+    font-family: "BarlowB";
+    src: url(Barlow-SemiBold.ttf);
+}
 body {
     position: relative;
+}
+pl {
+    font-family: BarlowL;
+    color: black;
+}
+
+ph {
+    font-family: BarlowB;
+    color: black;
 }
 
 h1 {
@@ -20,6 +37,7 @@ p {
     color: black;
     font-family: BarlowR;
 }
+
 td {
     color:black;
     font-family: BarlowR;
@@ -33,6 +51,10 @@ h2 {
     font-family: Barlow;
 }
 
+h3 {
+    color:black;
+    font-family: Barlow;
+}
 ul {
     list-style-type: none;
     margin: 0;
@@ -48,23 +70,55 @@ ul {
     top: 0;
     width: 100%;
     overflow: hidden;
+    font-family: Barlow;
+}
+
+.nav {
+    font-family: Barlow;
 }
 .top {
     padding-top: 40px;
+    padding-bottom: 30px;
 }
 
 li{
     padding-right: 25px;
     padding-left: 25px;
-    font-family: Barlow;
+    font-family: BarlowR;
+    color:black;
+}
+.bottom{
+    padding-left: 100px
+}
+.right{
+    float: right;
+    padding-right: 100px;
+}
+
+divM {
+    padding-bottom: 15px;
+}
+.video {
+    padding-bottom: 20px;
+    padding-top: 20px;
+}
+.space{
+    padding-top: 20px;
 }
 
 
 
-#education {padding-top:50px;height:500px;color: #fff; background-color: rgba(224, 224, 82, 0.137);}
-#work {padding-top:50px;height:500px;color: #fff; background-color: rgba(117, 187, 148, 0.267);}
-#projects {padding-top:50px;height:500px;color: #fff; background-color: #e4b67242;}
-#service {padding-top:50px;height:500px;color: #fff; background-color: rgba(243, 188, 197, 0.185);}
-#interets {padding-top:50px;height:500px;color: #fff; background-color: rgba(171, 117, 221, 0.226);}
-#family {padding-top:50px;height:500px;color: #fff; background-color: rgba(238, 238, 209, 0.329);}
-#contact {padding-top:50px;height:500px;color: #fff; background-color: rgba(186, 230, 150, 0.274);}
+.flex-container {
+  display: flex;
+  flex-direction: column;
+ }
+
+
+
+#education {padding-top:30px; padding-bottom:30px;color: #fff; background-color: rgba(224, 224, 82, 0.137); flex: 1 1 auto;}
+#work {padding-top:30px; padding-bottom:30px;color: #fff; background-color: rgba(117, 187, 148, 0.267); flex: 1 1 auto; }
+#projects {padding-top:30px; padding-bottom:30px; color: #fff; background-color: #e4b67242; flex: 1 1 auto; }
+#service {padding-top:30px;padding-bottom:30px; color: #fff; background-color: rgba(243, 188, 197, 0.185); flex: 1 1 auto;}
+#interets {padding-top:30px; padding-bottom:30px; color: #fff; background-color: rgba(171, 117, 221, 0.226); flex: 1 1 auto;}
+#family {padding-top:30px; padding-bottom:30px; color: #fff; background-color: rgba(238, 238, 209, 0.329); flex: 1 1 auto;}
+#contact {padding-top:30px; padding-bottom:30px; color: #fff; background-color: rgba(186, 230, 150, 0.274);flex: 1 1 auto;}

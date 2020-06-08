@@ -17,65 +17,73 @@
 body {
     position: relative;
 }
+
+html {
+     scroll-behavior: smooth;
+}
+
 pl {
-    font-family: BarlowL;
+    font-family: BarlowL, sans-serif;
     color: black;
 }
 
 ph {
-    font-family: BarlowB;
+    font-family: BarlowB, sans-serif;
     color: black;
 }
+
+.ph { font-family: BarlowB, sans-serif;
+    color: black;
+ }
 
 h1 {
   color: black;
   text-align: center;
-  font-family: Barlow;
+  font-family: Barlow, sans-serif;
 }
 
 p {
     color: black;
-    font-family: BarlowR;
+    font-family: BarlowR, sans-serif;
 }
 
 td {
     color:black;
-    font-family: BarlowR;
+    font-family: BarlowR, sans-serif;
 }
 th {
     color:black;
-    font-family: BarlowR;
+    font-family: BarlowR, sans-serif;
 }
 h2 {
     color:black;
-    font-family: Barlow;
+    font-family: Barlow, sans-serif;
 }
 
 h3 {
     color:black;
-    font-family: Barlow;
+    font-family: Barlow, sans-serif;
 }
-ul {
+.navbar {
     list-style-type: none;
     margin: 0;
-    padding: 0;
+    padding: 15px;
     overflow: hidden;
     background-color: rgb(182, 181, 181);
 	font-size: 1.5rem;
 	background: font-size-adjust;
-    font-family: Barlow;
-}
-.navbar {
+    font-family: Barlow, sans-serif;
     position: fixed;
     top: 0;
     width: 100%;
-    overflow: hidden;
-    font-family: Barlow;
 }
 
-.nav {
-    font-family: Barlow;
+.navbar a {
+    padding: 15px;
 }
+
+
+
 .top {
     padding-top: 40px;
     padding-bottom: 30px;
@@ -84,7 +92,7 @@ ul {
 li{
     padding-right: 25px;
     padding-left: 25px;
-    font-family: BarlowR;
+    font-family: BarlowR, sans-serif;
     color:black;
 }
 .bottom{
@@ -95,12 +103,14 @@ li{
     padding-right: 100px;
 }
 
-divM {
+.padding {
     padding-bottom: 15px;
 }
 .video {
     padding-bottom: 20px;
     padding-top: 20px;
+    width: 65%;
+    height: 65%;
 }
 .space{
     padding-top: 20px;
@@ -110,15 +120,16 @@ divM {
 
 .flex-container {
   display: flex;
-  flex-direction: column;
+  flex-direction: row;
+  flex-wrap: wrap;
  }
 
 
 
-#education {padding-top:30px; padding-bottom:30px;color: #fff; background-color: rgba(224, 224, 82, 0.137); flex: 1 1 auto;}
-#work {padding-top:30px; padding-bottom:30px;color: #fff; background-color: rgba(117, 187, 148, 0.267); flex: 1 1 auto; }
-#projects {padding-top:30px; padding-bottom:30px; color: #fff; background-color: #e4b67242; flex: 1 1 auto; }
-#service {padding-top:30px;padding-bottom:30px; color: #fff; background-color: rgba(243, 188, 197, 0.185); flex: 1 1 auto;}
-#interets {padding-top:30px; padding-bottom:30px; color: #fff; background-color: rgba(171, 117, 221, 0.226); flex: 1 1 auto;}
-#family {padding-top:30px; padding-bottom:30px; color: #fff; background-color: rgba(238, 238, 209, 0.329); flex: 1 1 auto;}
-#contact {padding-top:30px; padding-bottom:30px; color: #fff; background-color: rgba(186, 230, 150, 0.274);flex: 1 1 auto;}
+#education {padding-top:35px; padding-bottom:30px;color: #fff; background-color: rgba(224, 224, 82, 0.137); flex: 1 1 auto;}
+#work {padding-top:35px; padding-bottom:30px;color: #fff; background-color: rgba(117, 187, 148, 0.267); flex: 1 1 auto; }
+#projects {padding-top:35px; padding-bottom:30px; color: #fff; background-color: #e4b67242; flex: 1 1 auto; }
+#service {padding-top:35px;padding-bottom:30px; color: #fff; background-color: rgba(243, 188, 197, 0.185); flex: 1 1 auto;}
+#interets {padding-top:35px; padding-bottom:30px; color: #fff; background-color: rgba(171, 117, 221, 0.226); flex: 1 1 auto;}
+#family {padding-top:35px; padding-bottom:30px; color: #fff; background-color: rgba(238, 238, 209, 0.329); flex: 1 1 auto;}
+#contact {padding-top:35px; padding-bottom:30px; color: #fff; background-color: rgba(186, 230, 150, 0.274);flex: 1 1 auto;}

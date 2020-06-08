@@ -17,6 +17,11 @@
 body {
     position: relative;
 }
+
+html {
+     scroll-behavior: smooth;
+}
+
 pl {
     font-family: BarlowL, sans-serif;
     color: black;
@@ -59,7 +64,7 @@ h3 {
     color:black;
     font-family: Barlow, sans-serif;
 }
-.navigation {
+.navbar {
     list-style-type: none;
     margin: 0;
     padding: 15px;
@@ -73,7 +78,7 @@ h3 {
     width: 100%;
 }
 
-.navigation a {
+.navbar a {
     padding: 15px;
 }
 
@@ -121,10 +126,10 @@ li{
 
 
 
-#education {padding-top:30px; padding-bottom:30px;color: #fff; background-color: rgba(224, 224, 82, 0.137); flex: 1 1 auto;}
-#work {padding-top:30px; padding-bottom:30px;color: #fff; background-color: rgba(117, 187, 148, 0.267); flex: 1 1 auto; }
-#projects {padding-top:30px; padding-bottom:30px; color: #fff; background-color: #e4b67242; flex: 1 1 auto; }
-#service {padding-top:30px;padding-bottom:30px; color: #fff; background-color: rgba(243, 188, 197, 0.185); flex: 1 1 auto;}
-#interets {padding-top:30px; padding-bottom:30px; color: #fff; background-color: rgba(171, 117, 221, 0.226); flex: 1 1 auto;}
-#family {padding-top:30px; padding-bottom:30px; color: #fff; background-color: rgba(238, 238, 209, 0.329); flex: 1 1 auto;}
-#contact {padding-top:30px; padding-bottom:30px; color: #fff; background-color: rgba(186, 230, 150, 0.274);flex: 1 1 auto;}
+#education {padding-top:35px; padding-bottom:30px;color: #fff; background-color: rgba(224, 224, 82, 0.137); flex: 1 1 auto;}
+#work {padding-top:35px; padding-bottom:30px;color: #fff; background-color: rgba(117, 187, 148, 0.267); flex: 1 1 auto; }
+#projects {padding-top:35px; padding-bottom:30px; color: #fff; background-color: #e4b67242; flex: 1 1 auto; }
+#service {padding-top:35px;padding-bottom:30px; color: #fff; background-color: rgba(243, 188, 197, 0.185); flex: 1 1 auto;}
+#interets {padding-top:35px; padding-bottom:30px; color: #fff; background-color: rgba(171, 117, 221, 0.226); flex: 1 1 auto;}
+#family {padding-top:35px; padding-bottom:30px; color: #fff; background-color: rgba(238, 238, 209, 0.329); flex: 1 1 auto;}
+#contact {padding-top:35px; padding-bottom:30px; color: #fff; background-color: rgba(186, 230, 150, 0.274);flex: 1 1 auto;}

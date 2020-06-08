@@ -18,64 +18,67 @@ body {
     position: relative;
 }
 pl {
-    font-family: BarlowL;
+    font-family: BarlowL, sans-serif;
     color: black;
 }
 
 ph {
-    font-family: BarlowB;
+    font-family: BarlowB, sans-serif;
     color: black;
 }
+
+.ph { font-family: BarlowB, sans-serif;
+    color: black;
+ }
 
 h1 {
   color: black;
   text-align: center;
-  font-family: Barlow;
+  font-family: Barlow, sans-serif;
 }
 
 p {
     color: black;
-    font-family: BarlowR;
+    font-family: BarlowR, sans-serif;
 }
 
 td {
     color:black;
-    font-family: BarlowR;
+    font-family: BarlowR, sans-serif;
 }
 th {
     color:black;
-    font-family: BarlowR;
+    font-family: BarlowR, sans-serif;
 }
 h2 {
     color:black;
-    font-family: Barlow;
+    font-family: Barlow, sans-serif;
 }
 
 h3 {
     color:black;
-    font-family: Barlow;
+    font-family: Barlow, sans-serif;
 }
-ul {
+.navigation {
     list-style-type: none;
     margin: 0;
-    padding: 0;
+    padding: 15px;
     overflow: hidden;
     background-color: rgb(182, 181, 181);
 	font-size: 1.5rem;
 	background: font-size-adjust;
-    font-family: Barlow;
-}
-.navbar {
+    font-family: Barlow, sans-serif;
     position: fixed;
     top: 0;
     width: 100%;
-    overflow: hidden;
-    font-family: Barlow;
 }
 
-.nav {
-    font-family: Barlow;
+.navigation a {
+    padding: 15px;
 }
+
+
+
 .top {
     padding-top: 40px;
     padding-bottom: 30px;
@@ -84,7 +87,7 @@ ul {
 li{
     padding-right: 25px;
     padding-left: 25px;
-    font-family: BarlowR;
+    font-family: BarlowR, sans-serif;
     color:black;
 }
 .bottom{
@@ -95,12 +98,14 @@ li{
     padding-right: 100px;
 }
 
-divM {
+.padding {
     padding-bottom: 15px;
 }
 .video {
     padding-bottom: 20px;
     padding-top: 20px;
+    width: 65%;
+    height: 65%;
 }
 .space{
     padding-top: 20px;
@@ -110,7 +115,8 @@ divM {
 
 .flex-container {
   display: flex;
-  flex-direction: column;
+  flex-direction: row;
+  flex-wrap: wrap;
  }
 
 

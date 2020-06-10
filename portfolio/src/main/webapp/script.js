@@ -13,3 +13,8 @@
 // limitations under the License.
 
 
+function getServlet() {
+  fetch('/data').then(response => response.text()).then((servlet) => {
+    document.getElementById('servlet-container').innerText = servlet;
+  });
+}

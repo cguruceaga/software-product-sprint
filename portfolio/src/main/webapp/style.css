@@ -123,6 +123,12 @@ li{
   flex-direction: row;
   flex-wrap: wrap;
  }
+ 
+#servlet-container {
+     color: black;
+     font-family: BarlowR, sans-serif;
+     padding-bottom: 20px;
+ }
 
 
 

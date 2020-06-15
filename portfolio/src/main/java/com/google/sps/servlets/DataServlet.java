@@ -48,12 +48,16 @@ public class DataServlet extends HttpServlet {
             long id = entity.getKey().getId();
             String comment = (String) entity.getProperty("comment");
             long timestamp = (long) entity.getProperty("timestamp");
+            String fname = (String) entity.getProperty("first name");
+            String lname = (String) entity.getProperty("last name");
 
-            Comment NewComment = new Comment(id, comment, timestamp);
+            Comment NewComment = new Comment(id, comment, fname, lname, timestamp);
             comments.add(NewComment);
         }
 
     String text = getParameter(request, "text-input", "");   
+    String first = getParameter(request, "first-name", "");   
+    String last = getParameter(request, "last-name", "");   
     String[] words = text.split("\\s*,\\s*");
     long timestamp = System.currentTimeMillis(); 
 
@@ -61,6 +65,8 @@ public class DataServlet extends HttpServlet {
     Entity taskEntity = new Entity("Comments");
     taskEntity.setProperty("comment", text);
     taskEntity.setProperty("timestamp", timestamp); 
+    taskEntity.setProperty("first name", first);
+    taskEntity.setProperty("last name", last);
 
     datastore.put(taskEntity);
 
@@ -68,8 +74,8 @@ public class DataServlet extends HttpServlet {
     //response.sendRedirect("/index.html");
   
     Gson gson = new Gson();
-    response.setContentType("text/html;");
-    response.getWriter().println(gson.toJson(words));
+    response.setContentType("application/json;");
+    response.getWriter().println(gson.toJson(text));
 
 
   }

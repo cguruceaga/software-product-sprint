@@ -6,14 +6,14 @@ public final class Comment {
   private final long id;
   private final String comment;
   private final long timestamp;
-  private final String fname;
-  private final String lname;
+  private final String firstname;
+  private final String lastname;
 
-  public Comment(long id, String comment, String fname, String lname, long timestamp) {
+  public Comment(long id, String comment, String lastname, String firstname, long timestamp) {
     this.id = id;
     this.comment = comment;
-    this.fname = fname;
-    this.lname = lname;
+    this.firstname = firstname;
+    this.lastname = lastname;
     this.timestamp = timestamp;
   }
 }

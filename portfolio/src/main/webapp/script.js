@@ -15,10 +15,10 @@
 function getComments() {
   fetch('/comment').then(response => response.json()).then((comments) => {
     const commentElement = document.getElementById('comment-list');
-    commentElement.innerHTML = '';
-    for (i = 0; i < comments.length; i++) {
-      commentElement.appendChild(createListElement(comments[i]));
-    }
+    //commentElement.innerHTML = '';
+    comments.forEach((comment) => {
+      commentElement.appendChild(createListElement(comment));
+    })
   });
 }
 

@@ -35,6 +35,15 @@ import com.google.sps.data.Comment;
 /** Servlet that returns some example content. TODO: modify this file to handle comments data */
 @WebServlet("/comment")
 public class DataServlet extends HttpServlet {
+  private ArrayList<Comment> comments = new ArrayList<>();
+
+  @Override
+  public void doGet(HttpServletRequest request, HttpServletResponse response) throws IOException {
+    response.setContentType("application/json;");
+    Gson gson = new Gson();
+    String json = gson.toJson(comments);
+    response.getWriter().println(json);    
+  }
 
   @Override
   public void doPost(HttpServletRequest request, HttpServletResponse response) throws IOException {
@@ -43,25 +52,23 @@ public class DataServlet extends HttpServlet {
         DatastoreService datastore = DatastoreServiceFactory.getDatastoreService();
         PreparedQuery results = datastore.prepare(query);
         
-        List<Comment> comments = new ArrayList<>();
         for (Entity entity : results.asIterable()) {
             long id = entity.getKey().getId();
             String comment = (String) entity.getProperty("comment");
             long timestamp = (long) entity.getProperty("timestamp");
-            String fname = (String) entity.getProperty("first name");
-            String lname = (String) entity.getProperty("last name");
+            String firstname = (String) entity.getProperty("first name");
+            String lastname = (String) entity.getProperty("last name");
 
-            Comment NewComment = new Comment(id, comment, fname, lname, timestamp);
+            Comment NewComment = new Comment(id, comment, firstname, lastname, timestamp);
             comments.add(NewComment);
         }
-
+    
     String text = getParameter(request, "text-input", "");   
     String first = getParameter(request, "first-name", "");   
     String last = getParameter(request, "last-name", "");   
     String[] words = text.split("\\s*,\\s*");
     long timestamp = System.currentTimeMillis(); 
 
-    
     Entity taskEntity = new Entity("Comments");
     taskEntity.setProperty("comment", text);
     taskEntity.setProperty("timestamp", timestamp); 
@@ -69,15 +76,7 @@ public class DataServlet extends HttpServlet {
     taskEntity.setProperty("last name", last);
 
     datastore.put(taskEntity);
-
-
-    //response.sendRedirect("/index.html");
-  
-    Gson gson = new Gson();
-    response.setContentType("application/json;");
-    response.getWriter().println(gson.toJson(text));
-
-
+    response.sendRedirect("/index.html#contact");
   }
   private String getParameter(HttpServletRequest request, String name, String defaultValue) {
     String value = request.getParameter(name);

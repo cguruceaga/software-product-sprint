@@ -12,20 +12,13 @@
 // See the License for the specific language governing permissions and
 // limitations under the License.
 
-
-function getServerStats() {
-    fetch('/data').then(response => response.json()).then((stats) => {
-    // stats is an object, not a string, so we have to
-    // reference its fields to create HTML content
-
-    const statsListElement = document.getElementById('servlet-container');
-    statsListElement.innerHTML = '';
-    statsListElement.appendChild(
-        createListElement('comment 1: ' + stats[0]));
-    statsListElement.appendChild(
-        createListElement('comment 2: ' + stats[1]));
-    statsListElement.appendChild(
-        createListElement('comment 3: ' + stats[2]));
+function getComments() {
+  fetch('/comment').then(response => response.json()).then((comments) => {
+    const commentElement = document.getElementById('comment-list');
+    //commentElement.innerHTML = '';
+    comments.forEach((comment) => {
+      commentElement.appendChild(createListElement(comment));
+    })
   });
 }
 

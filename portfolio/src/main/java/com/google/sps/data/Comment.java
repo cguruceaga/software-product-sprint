@@ -5,11 +5,11 @@ public final class Comment {
 
   private final long id;
   private final String comment;
-  private final long timestamp;
   private final String firstname;
   private final String lastname;
+  private final long timestamp;
 
-  public Comment(long id, String comment, String lastname, String firstname, long timestamp) {
+  public Comment(long id, String comment, String firstname, String lastname, long timestamp) {
     this.id = id;
     this.comment = comment;
     this.firstname = firstname;

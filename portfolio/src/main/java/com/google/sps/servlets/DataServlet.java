@@ -30,18 +30,22 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import com.google.sps.data.Comment;
+import com.google.cloud.translate.Translate;
+import com.google.cloud.translate.TranslateOptions;
+import com.google.cloud.translate.Translation;
 
 
 /** Servlet that returns some example content. TODO: modify this file to handle comments data */
 @WebServlet("/comment")
 public class DataServlet extends HttpServlet {
   private ArrayList<Comment> comments = new ArrayList<>();
+  private ArrayList<String> mycomments = new ArrayList<>();
 
   @Override
   public void doGet(HttpServletRequest request, HttpServletResponse response) throws IOException {
     response.setContentType("application/json;");
     Gson gson = new Gson();
-    String json = gson.toJson(comments);
+    String json = gson.toJson(mycomments);
     response.getWriter().println(json);    
   }
 
@@ -51,30 +55,32 @@ public class DataServlet extends HttpServlet {
         
         DatastoreService datastore = DatastoreServiceFactory.getDatastoreService();
         PreparedQuery results = datastore.prepare(query);
-        
+
+        String text = getParameter(request, "text", "");  
+        String first = getParameter(request, "first-name", "");   
+        String last = getParameter(request, "last-name", "");  
+      
         for (Entity entity : results.asIterable()) {
             long id = entity.getKey().getId();
-            String comment = (String) entity.getProperty("comment");
+            String comment = (String) entity.getProperty("text");
             long timestamp = (long) entity.getProperty("timestamp");
-            String firstname = (String) entity.getProperty("first name");
-            String lastname = (String) entity.getProperty("last name");
+            String firstname = (String) entity.getProperty("first-name");
+            String lastname = (String) entity.getProperty("last-name");
 
             Comment NewComment = new Comment(id, comment, firstname, lastname, timestamp);
+            System.out.print("New comments: ");
+            System.out.print(NewComment);
             comments.add(NewComment);
+            System.out.print("comments: ");
+            System.out.print(comments);
         }
-    
-    String text = getParameter(request, "text-input", "");   
-    String first = getParameter(request, "first-name", "");   
-    String last = getParameter(request, "last-name", "");   
-    String[] words = text.split("\\s*,\\s*");
-    long timestamp = System.currentTimeMillis(); 
 
     Entity taskEntity = new Entity("Comments");
-    taskEntity.setProperty("comment", text);
-    taskEntity.setProperty("timestamp", timestamp); 
-    taskEntity.setProperty("first name", first);
-    taskEntity.setProperty("last name", last);
-
+    taskEntity.setProperty("text", text);
+    mycomments.add(text);
+    taskEntity.setProperty("first-name", first);
+    taskEntity.setProperty("last-name", last);
+    
     datastore.put(taskEntity);
     response.sendRedirect("/index.html#contact");
   }

@@ -15,12 +15,35 @@
 function getComments() {
   fetch('/comment').then(response => response.json()).then((comments) => {
     const commentElement = document.getElementById('comment-list');
-    //commentElement.innerHTML = '';
+    commentElement.innerHTML = comments;
+    console.log(comments);
     comments.forEach((comment) => {
       commentElement.appendChild(createListElement(comment));
+      console.log(comment);
     })
   });
 }
+
+function requestTranslation() {
+        const languageCode = document.getElementById('language').value;
+
+        const resultContainer = document.getElementById('comment-list');
+        console.log("result");
+        console.log(resultContainer);
+        resultContainer.innerText = 'Loading...';
+
+        const params = new URLSearchParams();
+        params.append('languageCode', languageCode);
+
+        fetch('/comment' , {
+          method: 'POST',
+          body: params
+        }).then(response => response.text())
+        .then((translatedMessage) => {
+          resultContainer.innerText = translatedMessage;
+        });
+      }
+
 
 /** Creates an <li> element containing text. */
 function createListElement(text) {

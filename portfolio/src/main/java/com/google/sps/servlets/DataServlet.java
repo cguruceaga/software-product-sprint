@@ -38,52 +38,58 @@ import com.google.cloud.translate.Translation;
 /** Servlet that returns some example content. TODO: modify this file to handle comments data */
 @WebServlet("/comment")
 public class DataServlet extends HttpServlet {
-  private ArrayList<Comment> comments = new ArrayList<>();
-  private ArrayList<String> mycomments = new ArrayList<>();
-
+  
   @Override
   public void doGet(HttpServletRequest request, HttpServletResponse response) throws IOException {
-    response.setContentType("application/json;");
+    ArrayList<Comment> comments = new ArrayList<>();
+    DatastoreService datastore = DatastoreServiceFactory.getDatastoreService();
+    Query query = new Query("Comment").addSort("timestamp", SortDirection.DESCENDING);
+    PreparedQuery results = datastore.prepare(query);
+    
+    String languageCode = request.getParameter("languageCode");
+    for (Entity entity : results.asIterable()) {
+        long id = entity.getKey().getId();
+        String comment = (String) entity.getProperty("comment");
+        String firstName = (String) entity.getProperty("firstName");
+        String lastName = (String) entity.getProperty("lastName");
+        long timestamp = (long) entity.getProperty("timestamp");
+
+        // Do the translation.
+        Translate translate = TranslateOptions.getDefaultInstance().getService();
+        Translation translation = translate.translate(comment, Translate.TranslateOption.targetLanguage(languageCode));
+        String translatedText = translation.getTranslatedText();
+
+        Comment NewComment = new Comment(id, translatedText, firstName, lastName, timestamp);
+        comments.add(NewComment);
+    }
+    response.setContentType("application/json; charset=UTF-8");
+    response.setCharacterEncoding("UTF-8");
     Gson gson = new Gson();
-    String json = gson.toJson(mycomments);
+    String json = gson.toJson(comments);
     response.getWriter().println(json);    
   }
 
   @Override
-  public void doPost(HttpServletRequest request, HttpServletResponse response) throws IOException {
-      Query query = new Query("Comment").addSort("timestamp", SortDirection.DESCENDING);
-        
-        DatastoreService datastore = DatastoreServiceFactory.getDatastoreService();
-        PreparedQuery results = datastore.prepare(query);
-
-        String text = getParameter(request, "text", "");  
-        String first = getParameter(request, "first-name", "");   
-        String last = getParameter(request, "last-name", "");  
-      
-        for (Entity entity : results.asIterable()) {
-            long id = entity.getKey().getId();
-            String comment = (String) entity.getProperty("text");
-            long timestamp = (long) entity.getProperty("timestamp");
-            String firstname = (String) entity.getProperty("first-name");
-            String lastname = (String) entity.getProperty("last-name");
-
-            Comment NewComment = new Comment(id, comment, firstname, lastname, timestamp);
-            System.out.print("New comments: ");
-            System.out.print(NewComment);
-            comments.add(NewComment);
-            System.out.print("comments: ");
-            System.out.print(comments);
-        }
-
-    Entity taskEntity = new Entity("Comments");
-    taskEntity.setProperty("text", text);
-    mycomments.add(text);
-    taskEntity.setProperty("first-name", first);
-    taskEntity.setProperty("last-name", last);
+  public void doPost(HttpServletRequest request, HttpServletResponse response) throws IOException {      
+    DatastoreService datastore = DatastoreServiceFactory.getDatastoreService();
     
-    datastore.put(taskEntity);
-    response.sendRedirect("/index.html#contact");
+    //get params
+    String text = getParameter(request, "comment", "");  
+    String first = getParameter(request, "firstName", "");   
+    String last = getParameter(request, "lastName", ""); 
+    String languageCode = request.getParameter("languageCode");
+
+    //setting data in datastore
+    Entity taskEntity = new Entity("Comment");
+    taskEntity.setProperty("comment", text);
+    taskEntity.setProperty("firstName", first);
+    taskEntity.setProperty("lastName", last);
+    taskEntity.setProperty("timestamp", System.currentTimeMillis());    
+    datastore.put(taskEntity); 
+        
+    response.sendRedirect("/index.html#contact"); 
   }
+
   private String getParameter(HttpServletRequest request, String name, String defaultValue) {
     String value = request.getParameter(name);
     if (value == null) {
@@ -91,6 +97,5 @@ public class DataServlet extends HttpServlet {
     }
     return value;
   }
-
 }
 

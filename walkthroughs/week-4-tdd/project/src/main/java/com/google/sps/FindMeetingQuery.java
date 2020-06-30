@@ -13,11 +13,36 @@
 // limitations under the License.
 
 package com.google.sps;
-
 import java.util.Collection;
+import java.util.ArrayList;
+import java.util.Arrays;
+import java.util.List;
+import java.util.Collections;
 
 public final class FindMeetingQuery {
+    //Event gives info about: title, TimeRange, Attendees
+    //Request gives info about: duration, attendees
   public Collection<TimeRange> query(Collection<Event> events, MeetingRequest request) {
-    throw new UnsupportedOperationException("TODO: Implement this method.");
+      //want to return a Collection of TimeRange -available for meeting 
+      //look at event, meeting request, and timerange
+      // use the TimeRange function fromStartEnd
+      //foreach all event in collection to get all time ranges
+    Collection<TimeRange> TimeOrder = new ArrayList<>();
+    //timeRange has start and end variable
+    for (Event event : events) {
+        //add all time ranges to a list 
+        TimeOrder.add(event.getWhen());
+    }
+    //sorting TimeOrder list 
+    Collection.sort(TimerOrder, (Event a, Event b) ->
+    a.getWhen().compareTo(b.getWhen()));
+    System.out.print(TimeOrder);
+      // when get list of ordered Timerange
+      //then need to go comparing them to see if they overlap
+      // and check duration of meeting 
+      // then need to see if ppl overlap 
+      
+      
+     return TimeOrder;  
   }
 }

@@ -13,9 +13,13 @@
 // limitations under the License.
 
 function getComments() {
-  fetch('/comment').then(response => response.json()).then((comments) => {
+    const languageCode = document.getElementById('language').value;
+    const params = new URLSearchParams();
+    params.append('languageCode', languageCode);
+    
+    fetch('/comment?param=' + languageCode )
+    .then(response => response.json()).then((comments) => {
     const commentElement = document.getElementById('comment-list');
-    //commentElement.innerHTML = '';
     comments.forEach((comment) => {
       commentElement.appendChild(createListElement(comment));
     })
@@ -23,8 +27,8 @@ function getComments() {
 }
 
 /** Creates an <li> element containing text. */
-function createListElement(text) {
+function createListElement(comment) {
   const liElement = document.createElement('li');
-  liElement.innerText = text;
+  liElement.innerText = comment.firstName + ", " + comment.lastName + ": " + comment.comment;
   return liElement;
 }
